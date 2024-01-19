@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Number Game</title>
+  <meta name="title" content="My Number Game" />
+  <meta name="description" content="Game of numbers and expressions" />
+  <meta name="keywords" content="game,my number,math,math games" />
+
+  <meta property="og:title" content="My Number Game" />
+  <meta property="og:description" content="Game of numbers and expressions" />
+  <meta property="og:url" content="https://www.drazengolic.com" />
+  <meta property="og:site_name" content="My Number Game" />
+
+  <meta name="twitter:title" content="My Number Game" />
+  <meta name="twitter:description" content="Game of numbers and expressions" />
+  <meta name="twitter:site" content="@Drazen_88" />
+
+  <meta itemprop="name" content="My Number Game">
+  <meta itemprop="description" content="Game of numbers and expressions">
+  <meta name="referrer" content="no-referrer-when-downgrade" />
+  <!-- <link rel="stylesheet" href="style.css" /> -->
+
+  <!-- <link rel="stylesheet" href="https://unpkg.com/bulmaswatch/spacelab/bulmaswatch.min.css"> -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <style>
+    body {
+      background-color: #ffffff;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%2373ae7b' fill-opacity='0.4'%3E%3Cpath opacity='.5' d='M96 95h4v1h-4v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4h-9v4h-1v-4H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15v-9H0v-1h15V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h9V0h1v15h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9h4v1h-4v9zm-1 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm9-10v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-10 0v-9h-9v9h9zm-9-10h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9zm10 0h9v-9h-9v9z'/%3E%3Cpath d='M6 5V0H5v5H0v1h5v94h1V6h94V5H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+    }
+
+    html,
+    body {
+      height: 100%;
+    }
+
+    :root {
+      --animate-duration: 350ms;
+    }
+
+    .icon {
+      /* safari fix */
+      align-items: initial;
+    }
+    /*modal breakpoint*/
+    @media screen and (max-width:768px) {
+      .modal-card {
+          width: 320px !important;
+          margin:auto;
+          left: -0.45rem;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container has-text-centered is-max-desktop">
+    <div class="columns is-mobile is-centered">
+      <div class="column is-full-mobile is-two-thirds-tablet is-half-desktop has-background-light"
+        style="border: 1px solid #73ae7b">
+        <div class="columns is-mobile">
+          <div class="column is-4 has-text-left">
+            <button class="button is-text" id="btn-rules">
+              <span class="icon is-small">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                </svg>
+              </span>
+              <span class="is-size-7-mobile is-size-6-tablet">Rules</span>
+            </button>
+          </div>
+          <div class="column has-text-centered is-4">
+            <span class="title m-0">My Number</span>
+          </div>
+          <div class="column has-text-right is-4">
+            <button class="button is-text" id="btn-stats">
+              <span class="icon is-small">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                  stroke="currentColor" class="w-6 h-6">
+                  <path stroke-linecap="round" stroke-linejoin="round"
+                    d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 0 1 3 19.875v-6.75ZM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V8.625ZM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 0 1-1.125-1.125V4.125Z" />
+                </svg>
+              </span>
+              <span class="is-size-7-mobile is-size-6-tablet">Stats</span>
+            </button>
+          </div>
+        </div>
+
+
+        <div class="columns is-mobile is-centered" id="panel-target">
+          <div class="column is-half-mobile is-one-third-tablet">
+            <div class="field">
+              <label class="label">Target Number</label>
+              <div class="control target-input">
+                <input id="num-target" class="input is-rounded" type="number" min="1" max="999" value="356"
+                  placeholder="999">
+              </div>
+              <p class="help target-input">1-999</p>
+            </div>
+            <div class="title animate__animated animate__fadeInDown is-hidden" id="target-view">356</div>
+          </div>
+        </div>
+
+        <div id="panel-input" class="mb-4 animate__animated animate__fadeInDown">
+          <label class="label">Given Numbers</label>
+          <p class="help">4x small, 1x medium, 1x large</p>
+          <div class="field is-grouped is-grouped-multiline is-grouped-centered mt-2 gap-1">
+            <p class="control mr-0">
+            <div class="select">
+              <select id="num-1" class="num">
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+              </select>
+            </div>
+            </p>
+            <p class="control">
+            <div class="select">
+              <select id="num-2" class="num">
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+              </select>
+            </div>
+            </p>
+            <p class="control">
+            <div class="select">
+              <select id="num-3" class="num">
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+              </select>
+            </div>
+            </p>
+            <p class="control">
+            <div class="select">
+              <select id="num-4" class="num">
+                <option selected>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+              </select>
+            </div>
+            </p>
+            <p class="control">
+            <div class="select">
+              <select id="num-5" class="num">
+                <option selected>10</option>
+                <option>15</option>
+                <option>20</option>
+              </select>
+            </div>
+            </p>
+            <p class="control">
+            <div class="select">
+              <select id="num-6" class="num">
+                <option selected>25</option>
+                <option>50</option>
+                <option>75</option>
+                <option>100</option>
+              </select>
+            </div>
+            </p>
+          </div>
+        </div>
+
+        <div class="content mt-2 animate__animated animate__fadeInUp is-hidden" id="panel-expr">
+          <div class="columns is-mobile box m-1 p-1">
+            <div class="column has-text-left">
+              <p class="is-size-4" id="user-formula"></p>
+            </div>
+            <div class="column is-narrow is-italic has-text-grey">
+              <p class="is-size-4" id="user-result"></p>
+            </div>
+          </div>
+          <div class="column is-full is-hidden" id="panel-time">
+            <p class="is-size-5" id="time-label">0:47</p>
+          </div>
+        </div>
+
+        <div class="is-hidden mb-4" id="panel-finding">
+          <p class="help">Looking for solution... <span id="finder-status"></span></p>
+          <progress class="progress is-small is-primary" max="100"></progress>
+        </div>
+
+        <div class="block animate__animated animate__fadeInUp is-hidden" id="panel-correct">
+          <p class="is-size-6">The solution is <span class="has-text-success">correct</span>! Time: <span
+              id="user-time"></span></p>
+        </div>
+
+        <div class="blockanimate__animated animate__fadeInUp is-hidden" id="panel-incorrect">
+          <p class="is-size-6">The solution is <span class="has-text-danger">not correct</span>!</p>
+        </div>
+
+        <div class="notification is-info is-light animate__animated animate__fadeInUp is-hidden" id="panel-found">
+          <p class="is-size-4" id="finder-formula"></p>
+          <p class="help">found in <span id="finder-time"></span></p>
+        </div>
+
+        <div class="content mt-5 animate__animated animate__fadeInUp" id="panel-start">
+          <div class="has-text-centered">
+            <button class="button is-primary is-medium play" id="btn-play">Play Random</button><br />
+            <button class="button is-link mt-2 play" id="btn-play2">Play Given</button>
+          </div>
+        </div>
+
+        <div class="columns is-full mt-2 animate__animated animate__fadeInUp is-hidden" id="panel-keyboard">
+          <div class="column"></div>
+          <div class="column is-narrow">
+            <p>
+              <button class="button is-medium is-primary btn-op mt-1" id="btn-add" data-key="+" disabled>
+                +
+              </button>
+              <button class="button is-medium is-primary btn-op mt-1" id="btn-sub" data-key="-" disabled>
+                -
+              </button>
+              <button class="button is-medium is-primary btn-op mt-1" id="btn-mul" data-key="*" disabled>
+                *
+              </button>
+              <button class="button is-medium is-primary btn-op mt-1" id="btn-div" data-key="/" disabled>
+                /
+              </button>
+              <button class="button is-medium is-success btn-po mt-1" id="btn-lp" data-key="(">
+                (
+              </button>
+              <button class="button is-medium is-success btn-pc mt-1" id="btn-rp" data-key=")">
+                )
+              </button>
+            </p>
+            <p class="">
+              <button class="button is-medium is-info btn-num mt-1" id="btn-1" data-key="0">
+                1
+              </button>
+              <button class="button is-medium is-info btn-num mt-1" id="btn-2" data-key="1">
+                2
+              </button>
+              <button class="button is-medium is-info btn-num mt-1" id="btn-3" data-key="2">
+                3
+              </button>
+              <button class="button is-medium is-info btn-num mt-1" id="btn-4" data-key="3">
+                4
+              </button>
+              <button class="button is-medium is-info btn-num mt-1" id="btn-5" data-key="4">
+                10
+              </button>
+              <button class="button is-medium is-info btn-num mt-1" id="btn-6" data-key="5">
+                100
+              </button>
+            </p>
+            <p class="">
+              <button class="button is-medium is-warning mt-1" id="btn-backspace" data-key="b">
+                <span class="icon is-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M12 9.75 14.25 12m0 0 2.25 2.25M14.25 12l2.25-2.25M14.25 12 12 14.25m-2.58 4.92-6.374-6.375a1.125 1.125 0 0 1 0-1.59L9.42 4.83c.21-.211.497-.33.795-.33H19.5a2.25 2.25 0 0 1 2.25 2.25v10.5a2.25 2.25 0 0 1-2.25 2.25h-9.284c-.298 0-.585-.119-.795-.33Z" />
+                  </svg>
+                </span>
+              </button>
+              <button class="button is-medium is-warning mt-1" id="btn-clear" data-key="c">
+                <span class="icon is-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M16.023 9.348h4.992v-.001M2.985 19.644v-4.992m0 0h4.992m-4.993 0 3.181 3.183a8.25 8.25 0 0 0 13.803-3.7M4.031 9.865a8.25 8.25 0 0 1 13.803-3.7l3.181 3.182m0-4.991v4.99" />
+                  </svg>
+                </span>
+              </button>
+              <button class="button is-medium is-danger mt-1" id="btn-submit" disabled>
+                <span class="icon is-small">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                    stroke="currentColor" class="w-6 h-6">
+                    <path stroke-linecap="round" stroke-linejoin="round"
+                      d="M9 12.75 11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 0 1-1.043 3.296 3.745 3.745 0 0 1-3.296 1.043A3.745 3.745 0 0 1 12 21c-1.268 0-2.39-.63-3.068-1.593a3.746 3.746 0 0 1-3.296-1.043 3.745 3.745 0 0 1-1.043-3.296A3.745 3.745 0 0 1 3 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 0 1 1.043-3.296 3.746 3.746 0 0 1 3.296-1.043A3.746 3.746 0 0 1 12 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 0 1 3.296 1.043 3.746 3.746 0 0 1 1.043 3.296A3.745 3.745 0 0 1 21 12Z" />
+                  </svg>
+                </span>
+                <span>Finish</span>
+              </button>
+            </p>
+          </div>
+          <div class="column"></div>
+        </div>
+
+        <footer class="footer">
+          <div class="content has-text-centered">
+            <p>
+              &copy; 2024 <a href="https://www.drazengolic.com/en/">Drazen Golic</a><br />
+              <small>The WASM file is under <a href="https://creativecommons.org/licenses/by-nc/4.0/deed.en" target="_blank">CC BY-NC 4.0 Deed</a> licence</small>
+            </p>
+            <p><small><b>Note:</b><br />the author and this page have no relation with the Radio Television of Serbia nor it's employees.</small></p>
+          </div>
+          <small><a href="https://mojbroj.drazengolic.com">[српски]</a></small>
+        </footer>
+      </div>
+    </div>
+  </div>
+  </div>
+
+  <div class="modal" id="modal-rules">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Rules</p>
+      </header>
+      <section class="modal-card-body">
+        <div class="content has-text-left is-size-7-mobile is-size-6-tablet">
+          <p>
+            You have <b>50 seconds</b> to enter an expression that gives the target number (or closest possible one) by using 6 given
+            numbers and basic algebraic operations (+, -, *, /), including parenthesis.
+            You don't need to use all the numbers.
+          </p>
+          <p>
+            The game ends when the <b>Finish</b> button is clicked, or when the time is up. When the game is over, a
+            solution generated by the computer will be displayed.
+          </p>
+          <p>Fractions and negative numbers are not allowed.</p>
+          <p>Only games with <b>random numbers</b> are included in the stats. The solution is considered correct if the expression
+            gives the target number (or the closest possible one).</p>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button id="btn-rules-close" class="button is-success">OK</button>
+        <label class="checkbox is-size-7-mobile is-size-6-tablet">
+          <input id="chk-show-rules" type="checkbox" checked>
+          Show rules before play
+        </label>
+      </footer>
+    </div>
+  </div>
+
+  <div class="modal" id="modal-stats">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Stats</p>
+      </header>
+      <section class="modal-card-body">
+        <div class="columns is-mobile is-multiline">
+          <div class="column is-6-mobile is-4-tablet has-text-centered">
+            <p class="heading is-hidden-mobile">Games total</p>
+            <p class="heading is-hidden-tablet">Games<br />total</p>
+            <p class="title" id="stat-total-count">0</p>
+          </div>
+          <div class="column is-6-mobile is-4-tablet has-text-centered">
+            <p class="heading is-hidden-mobile">Games solved</p>
+            <p class="heading is-hidden-tablet">Games<br />solved</p>
+            <p class="title" id="stat-win-count">0</p>
+          </div>
+          <div class="column is-6-mobile is-4-tablet has-text-centered">
+            <p class="heading">Rating</p>
+            <p class="title" id="stat-rating"></p>
+          </div>
+          <div class="column is-6-mobile is-4-tablet has-text-centered">
+            <p class="heading">Total<br />time</p>
+            <p class="title is-size-5-mobile is-size-3-tablet" id="stat-total-time">00:00:00</p>
+          </div>
+          <div class="column is-6-mobile is-4-tablet has-text-centered">
+            <p class="heading">Average<br />solution time</p>
+            <p class="title" id="stat-avg-time">0s</p>
+          </div>
+          <div class="column is-6-mobile is-4-tablet has-text-centered">
+            <p class="heading">Time of<br />last solution</p>
+            <p class="title" id="stat-last-time">0s</p>
+          </div>
+        </div>
+      </section>
+      <footer class="modal-card-foot">
+        <button id="btn-stats-close" class="button is-success">Close</button>
+      </footer>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+  <!-- Cloudflare Web Analytics -->
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "3a08ad115c3246619d5178f8db9fefc7"}'></script>
+  <!-- End Cloudflare Web Analytics -->
+</body>
+
+</html>
