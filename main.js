@@ -18,18 +18,18 @@ if (window.Worker) {
 function shuffle() {
   return new Promise((resolve, reject) => {
     const items = [
-      { id: "num-target", time: 750, items: 999 },
-      { id: "num-1", time: 350, items: 9 },
-      { id: "num-2", time: 350, items: 9 },
-      { id: "num-3", time: 350, items: 9 },
-      { id: "num-4", time: 350, items: 9 },
-      { id: "num-5", time: 350, items: [10, 15, 20] },
-      { id: "num-6", time: 350, items: [25, 50, 75, 100] },
+      { id: "num-target", time: 800, items: 999 },
+      { id: "num-1", time: 400, items: 9 },
+      { id: "num-2", time: 400, items: 9 },
+      { id: "num-3", time: 400, items: 9 },
+      { id: "num-4", time: 400, items: 9 },
+      { id: "num-5", time: 400, items: [10, 15, 20] },
+      { id: "num-6", time: 400, items: [25, 50, 75, 100] },
     ]
 
     let curr = 0
     let el = id(items[curr].id)
-    el.classList.add('is-warning')
+    el.classList.add('is-warning', 'has-background-warning-light')
 
     query('button.play').forEach(b => b.setAttribute('disabled', 'disabled'))
 
@@ -44,7 +44,7 @@ function shuffle() {
     }, 10)
 
     setTimeout(function tms() {
-      el.classList.remove('is-warning')
+      el.classList.remove('is-warning', 'has-background-warning-light')
       el.parentElement.classList.remove('is-warning')
       curr++
 
@@ -54,9 +54,10 @@ function shuffle() {
         setTimeout(() => {
           query('button.play').forEach(b => b.removeAttribute('disabled'))
           resolve()
-        }, 750)  
+        }, 999)  
       } else {
         el = id(items[curr].id)
+        el.classList.add('has-background-warning-light')
         el.parentElement.classList.add('is-warning')
 
         setTimeout(tms, items[curr].time)
